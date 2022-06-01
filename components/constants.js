@@ -1,0 +1,1 @@
+export const CharacterNames = ['Alex', 'Alfred', 'Anita'];
