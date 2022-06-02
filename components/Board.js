@@ -5,11 +5,7 @@ import styled from 'styled-components';
 const Board = () => {
   return (
     <StyledBoard> 
-      {
-        CharacterNames.map((name) => {
-          return (<div> {name} </div>);
-        })
-      }
+      {CharacterNames.map((name) => <CharacterPanel key={name} name={name} />)}
       <div>
         Player Face
       </div>
