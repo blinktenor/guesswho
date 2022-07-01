@@ -1,0 +1,15 @@
+.panel {
+  width: 147px;
+  height: 235px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.AlexIndent {
+  text-indent: -100px;
+}
+
+.Alex {
+  height: 740px;
+  width: 1400px;
+}
