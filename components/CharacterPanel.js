@@ -27,7 +27,6 @@ const CharacterPanel = (props) => {
       <img
         className={styledCharacters[name]}
         src='/board.png'
-        layout="responsive"
       />
     </div>
   );

@@ -5,11 +5,14 @@
   display: inline-block;
 }
 
-.AlexIndent {
-  text-indent: -100px;
+.David {
+  transform: translate(-104px, -245px);
+  height: 740px;
+  width: 1400px;
 }
 
 .Alex {
+  transform: translate(-100px, 0px);
   height: 740px;
   width: 1400px;
 }
