@@ -5,6 +5,15 @@
   display: inline-block;
 }
 
+@media (max-width: 600px) {
+  .panel {
+    width: 100%;
+    height: 235px;
+    overflow: hidden;
+    display: inline-block;
+  }
+}
+
 .Alex {
   transform: translate(-100px, 0px);
   height: 740px;
