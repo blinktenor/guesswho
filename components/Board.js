@@ -1,15 +1,20 @@
 import { CharacterNames } from './constants';
+import { useState } from 'react';
 import CharacterPanel from './CharacterPanel';
 import PlayerCharacter from './PlayerCharacter';
 import styled from 'styled-components';
 
 const Board = () => {
-  const playerName = CharacterNames[Math.floor(Math.random()*CharacterNames.length)];
+  const [playerName, setPlayerName] = useState(CharacterNames[Math.floor(Math.random()*CharacterNames.length)]);
+
+  const setNewPlayer = () => {
+    setPlayerName(CharacterNames[Math.floor(Math.random()*CharacterNames.length)]);
+  }
 
   return (
     <StyledBoard className='whoBoard'> 
       {CharacterNames.map((name) => <CharacterPanel key={name} name={name} />)}
-      <PlayerCharacter pcName={playerName} />
+      <PlayerCharacter pcName={playerName} randomize={setNewPlayer}/>
     </StyledBoard>
   );
 }
