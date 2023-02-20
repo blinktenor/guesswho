@@ -5,14 +5,146 @@
   display: inline-block;
 }
 
+.Alex {
+  transform: translate(-100px, 0px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Alfred {
+  transform: translate(-250px, 0px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Anita {
+  transform: translate(-410px, 0px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Anne {
+  transform: translate(-555px, 0px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Bernard {
+  transform: translate(-700px, 0px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Bill {
+  transform: translate(-850px, 0px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Charles {
+  transform: translate(-1000px, 0px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Claire {
+  transform: translate(-1150px, 0px);
+  height: 740px;
+  width: 1400px;
+}
+
 .David {
   transform: translate(-104px, -245px);
   height: 740px;
   width: 1400px;
 }
 
-.Alex {
-  transform: translate(-100px, 0px);
+.Eric {
+  transform: translate(-254px, -245px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Frans {
+  transform: translate(-410px, -245px);
+  height: 740px;
+  width: 1400px;
+}
+
+.George {
+  transform: translate(-555px, -245px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Herman {
+  transform: translate(-700px, -245px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Joe {
+  transform: translate(-850px, -245px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Maria {
+  transform: translate(-1000px, -245px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Max {
+  transform: translate(-1150px, -245px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Paul {
+  transform: translate(-104px, -508px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Peter {
+  transform: translate(-254px, -508px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Phillip {
+  transform: translate(-410px, -508px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Richard {
+  transform: translate(-555px, -508px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Robert {
+  transform: translate(-700px, -508px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Sam {
+  transform: translate(-850px, -508px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Susan {
+  transform: translate(-1000px, -508px);
+  height: 740px;
+  width: 1400px;
+}
+
+.Tom {
+  transform: translate(-1150px, -508px);
   height: 740px;
   width: 1400px;
 }
