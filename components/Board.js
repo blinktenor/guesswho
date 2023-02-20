@@ -12,10 +12,12 @@ const Board = () => {
   }
 
   return (
-    <StyledBoard className='whoBoard'> 
-      {CharacterNames.map((name) => <CharacterPanel key={name} name={name} />)}
+    <div>
       <PlayerCharacter pcName={playerName} randomize={setNewPlayer}/>
-    </StyledBoard>
+      <StyledBoard className='whoBoard'> 
+        {CharacterNames.map((name) => <CharacterPanel key={name} name={name} />)}
+      </StyledBoard>
+    </div>
   );
 }
 
