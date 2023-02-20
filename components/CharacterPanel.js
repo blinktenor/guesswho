@@ -9,11 +9,6 @@ const CharacterPanel = (props) => {
 
   const { name } = props;
 
-  const clickCharacterPanel = (event) => {
-    console.log(event.target);
-    setExcluded(!excluded);
-  }
-
   const gatherClasses = () => {
     const nameIndent = `${name}Indent`;
     return `${styledCharacters.panel} ${styledCharacters[nameIndent]}`;
@@ -22,12 +17,19 @@ const CharacterPanel = (props) => {
   return (
     <div 
       className={gatherClasses()}
-      onClick={clickCharacterPanel}
+      onClick={() => {setExcluded(!excluded);}}
     > 
-      <img
-        className={styledCharacters[name]}
-        src='/board.png'
-      />
+      {!excluded && 
+        <img
+          className={styledCharacters[name]}
+          src='/board.png'
+        />
+      }
+      { excluded && 
+        <img
+          className={styledCharacters[name]}
+        />
+      }
     </div>
   );
 }
