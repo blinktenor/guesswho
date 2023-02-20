@@ -1,1 +1,1 @@
-export const CharacterNames = ['Alex', 'Alfred', 'Anita', 'Anne', 'Bernard', 'Bill', 'Charles', 'Claire', 'David'];
+export const CharacterNames = ['Alex', 'Alfred', 'Anita', 'Anne', 'Bernard', 'Bill', 'Charles', 'Claire', 'David', 'Eric', 'Frans', 'George', 'Herman', 'Joe', 'Maria', 'Max', 'Paul', 'Peter', 'Phillip', 'Richard', 'Robert', 'Sam', 'Susan', 'Tom'];
