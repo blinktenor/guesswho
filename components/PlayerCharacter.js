@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styledCharacters from '../styles/CharacterPanel.module.css';
 
 const PlayerCharacter = (props) => {
-  const { pcName } = props;
+  const { pcName, randomize } = props;
 
   const gatherClasses = () => {
     const nameIndent = `${pcName}Indent`;
@@ -14,6 +14,7 @@ const PlayerCharacter = (props) => {
   return (
     <div 
       className={gatherClasses()}
+      onClick={() => randomize()}
     > 
       <img
         className={styledCharacters[pcName]}
