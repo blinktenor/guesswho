@@ -3,7 +3,18 @@
 }
 
 .PC {
+  width: 8%;
   position: absolute;
   top: 75%;
-  left: 50%;
+  left: 45%;
+  overflow: hidden;
+}
+
+.whoBoard {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  background-color: gold;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 32px;
 }
