@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import Image from 'next/image';
-// import board from '../public/board.png';
 import styledCharacters from '../styles/CharacterPanel.module.css';
 
 const CharacterPanel = (props) => {

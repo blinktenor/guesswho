@@ -1,14 +1,15 @@
 import { CharacterNames } from './constants';
 import CharacterPanel from './CharacterPanel';
+import PlayerCharacter from './PlayerCharacter';
 import styled from 'styled-components';
 
 const Board = () => {
+  const playerName = CharacterNames[Math.floor(Math.random()*CharacterNames.length)];
+
   return (
     <StyledBoard> 
       {CharacterNames.map((name) => <CharacterPanel key={name} name={name} />)}
-      <div>
-        Player Face
-      </div>
+      <PlayerCharacter pcName={playerName} />
     </StyledBoard>
   );
 }
