@@ -1,7 +1,10 @@
-import '../styles/globals.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import Board from '../components/Board';
+import '../styles/board.css';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function Home() {
+  return (
+    <Board />
+  );
 }
-
-export default MyApp

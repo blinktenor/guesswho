@@ -14,7 +14,9 @@ const Board = () => {
 }
 
 const StyledBoard = styled.div`
-  background-color: lightblue;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  background-color: gold;
   width: 80%;
   margin-right: 10%;
   margin-left: 10%;
