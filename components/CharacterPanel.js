@@ -1,12 +1,15 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styledCharacters from '../styles/CharacterPanel.module.css';
 
 const CharacterPanel = (props) => {
-  const [excluded, setExcluded] = useState(false);
+  const { name, toggled, togglePlayer } = props;
+  const [excluded, setExcluded] = useState(toggled);
 
-  const { name } = props;
+  useEffect(() => {
+    setExcluded(toggled);
+  }, [props.toggled]);
 
   const gatherClasses = () => {
     const nameIndent = `${name}Indent`;
@@ -16,7 +19,7 @@ const CharacterPanel = (props) => {
   return (
     <div 
       className={gatherClasses()}
-      onClick={() => {setExcluded(!excluded);}}
+      onClick={() => {togglePlayer(name);}}
     > 
       {!excluded && 
         <img
