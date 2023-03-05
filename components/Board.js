@@ -9,10 +9,14 @@ const Board = () => {
   const [playerMap, setPlayerMap] = useState(StartingBoard);
   const timer = QuestionTimer();
   const [toggledPlayers, setToggledPlayers] = useState([]);
+  const [toggledArray, setToggledArray] = useState([]);
 
   useEffect(() => {
     if (!timer.selecting) {
-      setToggledPlayers([]);
+      if (toggledPlayers.length) {
+        setToggledArray([toggledPlayers].concat(toggledArray));
+        setToggledPlayers([]);
+      }
     }
   }, [timer.selecting])
 
