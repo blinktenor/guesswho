@@ -18,6 +18,7 @@ const QuestionTimer = () => {
 
     setIntervalId(setInterval(() => {
       clearInterval(intervalId);
+      setIntervalId(0);
       setSelecting(false);
     }, 5000));
   }

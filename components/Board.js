@@ -12,8 +12,6 @@ const Board = () => {
 
   useEffect(() => {
     if (!timer.selecting) {
-      console.log('ending');
-      console.log(toggledPlayers);
       setToggledPlayers([]);
     }
   }, [timer.selecting])
