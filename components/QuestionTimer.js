@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 
 const QuestionTimer = () => {
   const [selecting, setSelecting] = useState(false);
-
-  let intervalId = 0;
+  const [intervalId, setIntervalId] = useState(0);
 
   useEffect(() => {
     return function cleanup() {
@@ -13,15 +12,14 @@ const QuestionTimer = () => {
 
   const resetTimer = () => {
     setSelecting(true);
-    console.log('selecting');
-    if (intervalId) {
+    if (intervalId !== 0) {
       clearInterval(intervalId);
     }
 
-    intervalId = setInterval(() => {
+    setIntervalId(setInterval(() => {
+      clearInterval(intervalId);
       setSelecting(false);
-    }, 5000);
-    console.log('interval: ' + intervalId);
+    }, 5000));
   }
 
   return { selecting, resetTimer };

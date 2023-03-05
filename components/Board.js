@@ -8,15 +8,22 @@ const Board = () => {
   const [playerName, setPlayerName] = useState(CharacterNames[Math.floor(Math.random()*CharacterNames.length)]);
   const [playerMap, setPlayerMap] = useState(StartingBoard);
   const timer = QuestionTimer();
+  const [toggledPlayers, setToggledPlayers] = useState([]);
 
   useEffect(() => {
-    console.log('selecting: ' + timer.selecting);
+    if (!timer.selecting) {
+      console.log('ending');
+      console.log(toggledPlayers);
+      setToggledPlayers([]);
+    }
   }, [timer.selecting])
 
   const togglePlayer = (name) => {
     timer.resetTimer();
     const newPlayerMap = {...playerMap};
     if (!newPlayerMap[name]) {
+      const newToggled = [name].concat(toggledPlayers);
+      setToggledPlayers(newToggled);
       newPlayerMap[name] = true;
     }
     setPlayerMap(newPlayerMap);
