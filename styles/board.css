@@ -1,13 +1,19 @@
-.excluded {
-  color:  red;
-}
-
 .PC {
   width: 9%;
   display: flex;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
+}
+
+.reset {
+  margin-top: 10px;
+  width: 9%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+  border-radius: 25px;
+  text-align: center;
 }
 
 .whoBoard {
