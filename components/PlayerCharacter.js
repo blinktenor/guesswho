@@ -12,14 +12,17 @@ const PlayerCharacter = (props) => {
   }
 
   return (
-    <div 
-      className={gatherClasses()}
-      onClick={() => randomize()}
-    > 
-      <img
-        className={styledCharacters[pcName]}
-        src='/board.png'
-      />
+    <div>
+      <div 
+        className={gatherClasses()}
+        onClick={() => randomize()}
+      > 
+        <img
+          className={styledCharacters[pcName]}
+          src='/board.png'
+        />
+      </div>
+      <div className="reset" onClick={() => props.resetGame()}> Reset the game </div>
     </div>
   );
 }

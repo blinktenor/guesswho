@@ -20,6 +20,13 @@ const Board = () => {
     }
   }, [timer.selecting])
 
+  const resetGame = () => {
+    setNewPlayer();
+    setPlayerMap(StartingBoard);
+    setToggledPlayers([]);
+    setToggledArray([]);
+  }
+
   const togglePlayer = (name) => {
     timer.resetTimer();
     const newPlayerMap = {...playerMap};
@@ -37,7 +44,7 @@ const Board = () => {
 
   return (
     <div>
-      <PlayerCharacter pcName={playerName} randomize={setNewPlayer}/>
+      <PlayerCharacter pcName={playerName} randomize={setNewPlayer} resetGame={resetGame}/>
       <div className='whoBoard'> 
         {Object.keys(playerMap).map((name) => 
           <CharacterPanel key={name} toggled={playerMap[name]} name={name} togglePlayer={togglePlayer} />
