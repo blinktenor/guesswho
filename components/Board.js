@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import CharacterPanel from './CharacterPanel';
 import PlayerCharacter from './PlayerCharacter';
 import QuestionTimer from './QuestionTimer';
+import History from './History';
 import { CharacterNames, Pictures, StartingBoard } from './constants';
 
 const Board = () => {
@@ -50,6 +51,7 @@ const Board = () => {
           <CharacterPanel key={name} toggled={playerMap[name]} name={name} togglePlayer={togglePlayer} />
         )}
       </div>
+      <History questions={toggledArray} />
     </div>
   );
 }

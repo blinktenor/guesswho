@@ -67,3 +67,16 @@
   width: 90%;
   text-align: center;
 }
+
+.historyContainer {
+  margin-top: 20px;
+}
+
+.questionText {
+  width: 100%;
+}
+
+.removedCharactersContainer {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+}
