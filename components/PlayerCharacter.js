@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import Image from 'next/image';
 import styledCharacters from '../styles/CharacterPanel.module.css';
 
 const PlayerCharacter = (props) => {
