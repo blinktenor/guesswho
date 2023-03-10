@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import styledCharacters from '../styles/CharacterPanel.module.css';
+import { Pictures } from './constants';
 
 const PlayerCharacter = (props) => {
   const { questions } = props;
@@ -10,29 +10,25 @@ const PlayerCharacter = (props) => {
     return `${styledCharacters.panel} ${styledCharacters[nameIndent]}`;
   }
 
-  console.log(questions);
-
   return (
-    <div>
+    <div className='historyContainer'>
       {questions.map((characters) => {
         return (
           <div>
-            <textarea /> 
-            {characters.map((character) => {
-              return (
-                <div>
-                  {character}
-                  <div 
-                    className={gatherClasses(character)}
-                  > 
+            <textarea className='questionText' /> 
+            <div className='removedCharactersContainer'>
+              {characters.map((character) => {
+                return (
+                  <div> 
                     <img
-                      className={styledCharacters[character]}
-                      src='/board.png'
+                      className={'selectable'}
+                      src={Pictures[character]}
                     />
+                    <div className='characterName'>{character}</div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         )
       })}

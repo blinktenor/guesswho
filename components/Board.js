@@ -51,7 +51,7 @@ const Board = () => {
           <CharacterPanel key={name} toggled={playerMap[name]} name={name} togglePlayer={togglePlayer} />
         )}
       </div>
-      <History questions={toggledPlayers} />
+      <History questions={toggledArray} />
     </div>
   );
 }
