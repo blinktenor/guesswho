@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import CharacterPanel from './CharacterPanel';
 import PlayerCharacter from './PlayerCharacter';
 import QuestionTimer from './QuestionTimer';
-import History from './History';
-import { CharacterNames, StartingBoard } from './constants';
+import { CharacterNames, Pictures, StartingBoard } from './constants';
 
 const Board = () => {
   const [playerName, setPlayerName] = useState(CharacterNames[Math.floor(Math.random()*CharacterNames.length)]);
@@ -47,11 +46,10 @@ const Board = () => {
     <div>
       <PlayerCharacter pcName={playerName} randomize={setNewPlayer} resetGame={resetGame}/>
       <div className='whoBoard'> 
-        {Object.keys(playerMap).map((name) => 
+        {CharacterNames.map((name) => 
           <CharacterPanel key={name} toggled={playerMap[name]} name={name} togglePlayer={togglePlayer} />
         )}
       </div>
-      <History questions={toggledArray} />
     </div>
   );
 }

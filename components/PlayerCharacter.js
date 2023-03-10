@@ -1,25 +1,21 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import styledCharacters from '../styles/CharacterPanel.module.css';
+import { Pictures } from './constants';
 
 const PlayerCharacter = (props) => {
   const { pcName, randomize } = props;
 
-  const gatherClasses = () => {
-    const nameIndent = `${pcName}Indent`;
-    return `${styledCharacters.panel} ${styledCharacters[nameIndent]} PC`;
-  }
-
   return (
     <div>
       <div 
-        className={gatherClasses()}
+        className='PCcharacterContainer'
         onClick={() => randomize()}
       > 
         <img
-          className={styledCharacters[pcName]}
-          src='/board.png'
+          className={'selectable'}
+          src={Pictures[pcName]}
         />
+        <div className='characterName'>{pcName}</div>
       </div>
       <div className="reset" onClick={() => props.resetGame()}> Reset the game </div>
     </div>
