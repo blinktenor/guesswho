@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import styledCharacters from '../styles/CharacterPanel.module.css';
+import { Pictures } from './constants';
 
 const CharacterPanel = (props) => {
   const { name, toggled, togglePlayer } = props;
@@ -11,25 +10,23 @@ const CharacterPanel = (props) => {
     setExcluded(toggled);
   }, [props.toggled]);
 
-  const gatherClasses = () => {
-    const nameIndent = `${name}Indent`;
-    return `${styledCharacters.panel} ${styledCharacters[nameIndent]}`;
-  }
-
   return (
     <div 
-      className={gatherClasses()}
+      className='characterContainer'
       onClick={() => {togglePlayer(name);}}
     > 
       {!excluded && 
-        <img
-          className={styledCharacters[name]}
-          src='/board.png'
-        />
+        <div>
+          <img
+            className='selectable'
+            src={Pictures[name]}
+          />
+          <div className='characterName'>{name}</div>
+        </div>
       }
       { excluded && 
         <img
-          className={styledCharacters[name]}
+          className='selectable'
         />
       }
     </div>
