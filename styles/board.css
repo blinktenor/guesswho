@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 .PC {
   width: 9%;
   display: flex;
@@ -21,6 +25,16 @@
   grid-template-columns: repeat(8, 1fr);
   background-color: gold;
   margin-top: 32px;
+  padding-top: 32px;
+}
+
+.gameBoard {
+  width: 100%;
+  background-color: darkgoldenrod;
+}
+
+.historyRow {
+  margin: 0px 16px 32px 16px;
 }
 
 @media (max-width: 600px) {
@@ -70,13 +84,21 @@
 
 .historyContainer {
   margin-top: 20px;
+  padding-bottom: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.historyCharacter {
+  width: 100px;
 }
 
 .questionText {
   width: 100%;
+  background-color: goldenrod;
 }
 
 .removedCharactersContainer {
   display: grid;
-  grid-template-columns: repeat(20, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }

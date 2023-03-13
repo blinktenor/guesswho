@@ -1,25 +1,28 @@
 import { useState, useEffect } from 'react';
 import CharacterPanel from './CharacterPanel';
 import PlayerCharacter from './PlayerCharacter';
-import QuestionTimer from './QuestionTimer';
 import History from './History';
 import { CharacterNames, Pictures, StartingBoard } from './constants';
+import useInterval from './useInterval';
 
 const Board = () => {
   const [playerName, setPlayerName] = useState(CharacterNames[Math.floor(Math.random()*CharacterNames.length)]);
   const [playerMap, setPlayerMap] = useState(StartingBoard);
-  const timer = QuestionTimer();
   const [toggledPlayers, setToggledPlayers] = useState([]);
   const [toggledArray, setToggledArray] = useState([]);
+  const [remainingTime, setRemainingTime] = useState(-1);
 
-  useEffect(() => {
-    if (!timer.selecting) {
+  useInterval(() => {
+    if (remainingTime > 0) {
+      setRemainingTime(remainingTime - 1);
+    } else if (remainingTime === 0) {
       if (toggledPlayers.length) {
         setToggledArray([toggledPlayers].concat(toggledArray));
         setToggledPlayers([]);
       }
+      setRemainingTime(-1);
     }
-  }, [timer.selecting])
+  }, 1000);
 
   const resetGame = () => {
     setNewPlayer();
@@ -29,7 +32,7 @@ const Board = () => {
   }
 
   const togglePlayer = (name) => {
-    timer.resetTimer();
+    setRemainingTime(6);
     const newPlayerMap = {...playerMap};
     if (!newPlayerMap[name]) {
       const newToggled = [name].concat(toggledPlayers);
@@ -44,7 +47,7 @@ const Board = () => {
   }
 
   return (
-    <div>
+    <div className='gameBoard'>
       <PlayerCharacter pcName={playerName} randomize={setNewPlayer} resetGame={resetGame}/>
       <div className='whoBoard'> 
         {CharacterNames.map((name) => 
