@@ -44,7 +44,7 @@ const Board = () => {
   }
 
   return (
-    <div>
+    <div className='gameBoard'>
       <PlayerCharacter pcName={playerName} randomize={setNewPlayer} resetGame={resetGame}/>
       <div className='whoBoard'> 
         {CharacterNames.map((name) => 
