@@ -2,25 +2,30 @@ import { useEffect, useState } from 'react';
 
 const QuestionTimer = () => {
   const [selecting, setSelecting] = useState(false);
-  const [intervalId, setIntervalId] = useState(0);
+  const [time, setTime] = useState(0);
 
   useEffect(() => {
     return function cleanup() {
-      clearInterval(intervalId);
+      clearTimeout(time);
     };
   }, []);
 
+  const endTimer = () => {
+    if (time !== 0) {
+      clearTimeout(time);
+      setTime(0);
+      setSelecting(false);
+    }
+  }
+
   const resetTimer = () => {
     setSelecting(true);
-    if (intervalId !== 0) {
-      clearInterval(intervalId);
+    if (time !== 0) {
+      clearTimeout(time);
     }
 
-    setIntervalId(setInterval(() => {
-      clearInterval(intervalId);
-      setIntervalId(0);
-      setSelecting(false);
-    }, 5000));
+    const time = setTimeout(endTimer, 5000);
+    setTime(time);
   }
 
   return { selecting, resetTimer };

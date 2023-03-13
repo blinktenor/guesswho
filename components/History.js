@@ -14,12 +14,12 @@ const PlayerCharacter = (props) => {
     <div className='historyContainer'>
       {questions.map((characters) => {
         return (
-          <div>
+          <div key={characters}>
             <textarea className='questionText' /> 
             <div className='removedCharactersContainer'>
               {characters.map((character) => {
                 return (
-                  <div> 
+                  <div key={character}> 
                     <img
                       className={'selectable'}
                       src={Pictures[character]}
