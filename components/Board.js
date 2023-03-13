@@ -8,7 +8,6 @@ import useInterval from './useInterval';
 const Board = () => {
   const [playerName, setPlayerName] = useState(CharacterNames[Math.floor(Math.random()*CharacterNames.length)]);
   const [playerMap, setPlayerMap] = useState(StartingBoard);
-  const timer = QuestionTimer();
   const [toggledPlayers, setToggledPlayers] = useState([]);
   const [toggledArray, setToggledArray] = useState([]);
   const [remainingTime, setRemainingTime] = useState(-1);
