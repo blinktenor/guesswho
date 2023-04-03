@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { Pictures } from './constants';
 
-const PlayerCharacter = (props) => {
+const History = (props) => {
   const { questions } = props;
 
   const gatherClasses = (character) => {
@@ -14,7 +14,7 @@ const PlayerCharacter = (props) => {
     <div className='historyContainer'>
       {questions.map((characters) => {
         return (
-          <div key={characters} className='historyRow'>
+          <div key={characters} className='historyRow' data-testid='history-row'>
             <textarea className='questionText' /> 
             <div className='removedCharactersContainer'>
               {characters.map((character) => {
@@ -36,4 +36,4 @@ const PlayerCharacter = (props) => {
   );
 }
 
-export default PlayerCharacter;
+export default History;

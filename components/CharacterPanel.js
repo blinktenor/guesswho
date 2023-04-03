@@ -14,6 +14,7 @@ const CharacterPanel = (props) => {
     <div 
       className='characterContainer'
       onClick={() => {togglePlayer(name);}}
+      data-testid='character-container'
     > 
       {!excluded && 
         <div>
@@ -21,7 +22,7 @@ const CharacterPanel = (props) => {
             className='selectable'
             src={Pictures[name]}
           />
-          <div className='characterName'>{name}</div>
+          <div className='characterName' data-testid='character-name'>{name}</div>
         </div>
       }
       { excluded && 
